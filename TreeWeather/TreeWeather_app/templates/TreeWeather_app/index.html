@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
+    <title>TreeWeatherService</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+   
+
+    <link rel="icon" type="image/png" href="https://cdn.icon-icons.com/icons2/459/PNG/128/weather_43796.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap" rel="stylesheet"> 
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+     
+  <!--CLASS HEADER CONTAINER-->
+  <div class="header-container">
+  <a href="/" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+    <img src="https://imgs.search.brave.com/GNHOHAwQThOjGJSLFiqQLOS31q9SxHW9HNmmblMLF3E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzIzOTk1Ny9p/c29sYXRlZC9wcmV2/aWV3L2I0Y2EyNmNj/ZDE5ZTU3ZjA2MDRm/N2YwMTUwMmY0ZDcw/LWNsaW1hLWVuLWxh/LW5hdHVyYWxlemEt/MjYucG5n" alt="Logo"/>
+    <h1><b>TreeWeather</b></h1>
+    <img src="https://imgs.search.brave.com/pTNT8_FjI5_wanBSXofvf89ymk8YcxugeLAnPznZDso/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzIzOTk1OS9p/c29sYXRlZC9wcmV2/aWV3LzRhNzYyODgz/ZjRlYzg4NzRjYWRj/MWJiNDRiYmRkMjYz/LWNsaW1hLWVuLWxh/LW5hdHVyYWxlemEt/MjgucG5n" alt="Logo Secundario"/>
+      </a>
+          </div>
+
+    <!--CLASS INPUT CONTAINER-->
+    <div class="main-input-container">
+      <form method="POST" autocomplete="off"> {% csrf_token %}
+        <input type='text' placeholder='Ingrese una ciudad o un ticket . . .' name='city'/>
+        <button class="boton" type="submit"><b>Buscar</b></button>
+      </form>
+    </div>
+
+    {% if error_message %}
+      <div class="alert-danger">{{ error_message }}</div>
+    {% endif %}
+
+    <!--CONSULTA DE UNA SOLA CIUDAD-->
+    {% if city_input is not None %}
+    <div class="container">
+      <div class="extra">
+        <div class="city-input">
+          <div class="main-box">
+            <h2>{{city}}</h2>
+            <h2 class="description">{{description}}</h2>
+
+            {% if icon is not None %}
+            <img src="http://openweathermap.org/img/w/{{icon}}.png" width="100px"/>
+            {% else %}
+            <img src="" alt="Sin icono"/>
+            {% endif %}
+          </div>
+
+          <div class="aditional-box">
+            {% if tempC is not None %}
+            <div class="box1">
+              <h2>Temperatura: {{tempC}} °C </h2>
+            </div>
+            {% endif %}
+            {% if humidity is not None %}
+            <div class="box2">
+              <h2>Humedad: {{humidity}} % </h2>
+            </div>
+            {% endif %}
+            {% if pressure is not None %}
+            <div class="box3">
+              <h2>Presión: {{pressure}} hPa </h2>
+            </div>
+            {% endif %}
+            {% if wind_speed is not None %}
+            <div class="box4">
+              <h2>Velocidad de viento: {{wind_speed}} m/s</h2>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+      
+    <!--ENTRADA ES UN TICKET-->  
+    {% if ticket_input is not None %}
+    <div class="container">
+      <!-- Conjunto de cajas para la ubicación de origen -->
+      <div class="extra-box">
+        <div class="location-box">
+          <div class="part1">
+            <h2>Origen: {{cityO}}</h2>
+            <h2 class="description">{{description}}</h2>
+                      
+            {% if icon is not None %}
+            <img src="http://openweathermap.org/img/w/{{icon}}.png" width="100px" alt="Icono del clima" />
+            {% else %}
+            <img src="" alt="Icono del clima no disponible" />
+            {% endif %}
+          </div>
+
+          <div class="part2">
+            {% if tempC is not None %}
+            <div class="caja1">
+              <h2>Temperatura: {{tempC}} °C</h2>
+            </div>
+            {% endif %}
+            {% if humidity is not None %}
+            <div class="caja1">
+              <h2>Humedad: {{humidity}} %</h2>
+            </div>
+            {% endif %}
+            {% if pressure is not None %}
+            <div class="caja1">
+              <h2>Presión: {{pressure}} hPa</h2>
+            </div>
+            {% endif %}
+            {% if wind_speed is not None %}
+            <div class="caja1">
+              <h2>Velocidad de viento: {{wind_speed}} m/s</h2>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        
+        <!-- Conjunto de cajas para la ubicación de destino -->
+        <div class="location-box">
+          <div class="part3">
+            <h2>Destino: {{cityD}}</h2>
+            <h2 class="description">{{descriptionD}}</h2>
+                      
+            {% if iconD is not None %}
+            <img src="http://openweathermap.org/img/w/{{iconD}}.png" width="100px" alt="Icono del clima" />
+            {% else %}
+            <img src="" alt="Icono del clima no disponible" />
+            {% endif %}
+          </div>
+
+          <div class="part4">
+            {% if tempCD is not None %}
+            <div class="caja1">
+              <h2>Temperatura: {{tempCD}} °C</h2>
+            </div>
+            {% endif %}
+            {% if humidityD is not None %}
+            <div class="caja1">
+              <h2>Humedad: {{humidityD}} %</h2>
+            </div>
+            {% endif %}
+            {% if pressureD is not None %}
+            <div class="caja1">
+              <h2>Presión: {{pressureD}} hPa</h2>
+            </div>
+            {% endif %}
+            {% if wind_speedD is not None %}
+            <div class="caja1">
+              <h2>Velocidad de viento: {{wind_speedD}} m/s</h2>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+          
+  <footer>
+    <div class="container-footer">
+      <div class="left_part">
+        <h2>Mistikos</h2>
+      </div>
+      <div class="right_part">
+        <a href="https://openweathermap.org/">
+          <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt="OpenWeatherMap" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,164 @@
+/* General Body Styles */
+body {
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    color: rgb(0, 0, 0); 
+    background-image: url('https://img.freepik.com/vector-gratis/minimo-fondo-montana-azul-estetica_53876-111802.jpg?w=740&t=st=1725252421~exp=1725253021~hmac=9e91e461bc44d73a60c0a9ed614d9f69cafaee9704073c34da731c690c604e5a%27');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styles */
+.header-container {
+    padding: auto;
+    font-size: 35px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;  
+    background: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px);
+}
+
+.header-container img {
+    margin-right: 15px; 
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Main Input Container */
+.main-input-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 10px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Button Styles */
+.boton {
+    border-radius: 5px; 
+    color: rgb(240, 244, 244);
+    width: 120px;
+    height: 45px;
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(50, 50, 50)); 
+    border: none; 
+    margin-left: 10px; 
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif; 
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, rgb(70, 70, 70), rgb(100, 100, 100));
+}
+
+/* Input Styles */
+.main-input-container input {
+    border-radius: 5px; 
+    padding: 10px;
+    width: 340px;
+    height: 20px;
+    border: none;
+    color: rgb(17, 18, 18);
+    background-color: rgba(255, 255, 255, 0.7); 
+    font-size: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Space Grotesk', sans-serif;
+    transition: background 0.3s; 
+}
+
+.main-input-container input:hover {
+    background-color: rgba(255, 255, 255, 0.9); 
+}
+
+/* Container for Results */
+.extra-box, .extra {
+    display: flex; 
+    justify-content: center;
+    gap: 20px; 
+    align-items: flex-start;
+    border: transparent;
+    border-radius: 10px; 
+    padding: 10px;
+}
+
+/* Individual Result Box */
+.location-box, .main-box {
+    align-items: center; 
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location-box:hover, .main-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.part1, .part3 {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(8, 8, 8, 0.1);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.part2, .part4, .aditional-box {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+}
+
+.caja1, .box1, .box2, .box3, .box4 {
+    border: 1px solid #000000;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer { 
+    text-align: center;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.left_part {    
+    font-size: 18px;
+    color: rgb(255, 255, 255); 
+}
+
+.right_part img {
+    width: 150px;
+    margin-right: 40px;
+}
