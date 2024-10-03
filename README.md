@@ -1,4 +1,10 @@
 # Proyecto-clima
+![alt text](image.png)
+
+## Integrantes:
+- Rosas Marín Jesús Martín
+- Reyes Arteaga Angel David
+- Urzua Contreras Cristian Josue
 
 ### Pasos para correr el programa
 
@@ -101,10 +107,10 @@
 
 ### Para desactivar el entorno virtual
 
-Ya que has terminado de interactuar con Saturno.  desactiva el entorno virtual, para ello corre lo siguiente en tu terminal:
+Ya que has terminado de interactuar con nuestra App  desactiva el entorno virtual, para ello corre lo siguiente en tu terminal:
 
  ```
    deactivate
  ```
 
-Tu entorno virtual acaba de desactivarse.
+Y asi el entorno virtual acaba de desactivarse.
