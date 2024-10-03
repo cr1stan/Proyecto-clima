@@ -2,9 +2,9 @@
 ![alt text](image.png)
 
 ## Integrantes:
-- Rosas Marín Jesús Martín
-- Reyes Arteaga Angel David
-- Urzua Contreras Cristian Josue
+- Urzua Contreras Cristian Josue - Lider
+- Rosas Marín Jesús Martín - BackEnd
+- Reyes Arteaga Angel David - FrontEnd
 
 ### Pasos para correr el programa
 
